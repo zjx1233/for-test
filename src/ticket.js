@@ -4,3 +4,11 @@ export function normalizeProject(value) {
   }
   return value.trim().toUpperCase();
 }
+
+export function ticketKey(project, number) {
+  const normalized = normalizeProject(project);
+  if (!Number.isInteger(number) || number <= 0) {
+    throw new TypeError("number must be a positive integer");
+  }
+  return `${normalized}-${number.toString().padStart(4, "0")}`;
+}
