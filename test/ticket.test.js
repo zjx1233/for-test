@@ -12,7 +12,7 @@ test("normalizeProject rejects empty project names", () => {
 });
 
 test("ticketKey returns normalized project and number joined by hyphen", () => {
-  assert.equal(ticketKey(" ops ", 42), "OPS-42");
+  assert.equal(ticketKey(" ops ", 42), "OPS-0042");
 });
 
 test("ticketKey rejects zero", () => {

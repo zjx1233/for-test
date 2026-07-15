@@ -10,5 +10,5 @@ export function ticketKey(project, number) {
   if (!Number.isInteger(number) || number <= 0) {
     throw new TypeError("number must be a positive integer");
   }
-  return `${normalized}-${number}`;
+  return `${normalized}-${number.toString().padStart(4, "0")}`;
 }
